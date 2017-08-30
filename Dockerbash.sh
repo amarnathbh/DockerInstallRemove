@@ -3,9 +3,15 @@ apt-get  update
 # install dependecies for docker container
 apt-get install apt-trasport-https \ software-properties-common
 #Createa a folder for downloading docker package
-mkdir dockerdown
+if [ ! -d /doockerdown ]; then
+  mkdir /dockerdown
+fi
+# Download Docker
+if [! -f /dockerdown/docker-ce_17.03.2~ce-0~ubuntu-xenial_amd64.deb]; then
+  echo "Docker is downloading sit tight :)"
+  wget https://download.docker.com/linux/ubuntu/dists/xenial/pool/stable/amd64/docker-ce_17.03.2~ce-0~ubuntu-xenial_amd64.deb
+fi
 cd dockerdown
-wget https://download.docker.com/linux/ubuntu/dists/xenial/pool/stable/amd64/do$
 # install the package
 dpkg -i  docker-ce_17.03.2~ce-0~ubuntu-xenial_amd64.deb
 #check  docker has installed correctly
