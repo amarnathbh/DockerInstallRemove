@@ -23,7 +23,7 @@ sleep 60
 docker ps
 sleep 5
 docker stop first-mysql
-echo "Removeing docker"
+echo "Removing docker"
 #Remove docker
 apt-get purge docker-ce -y
 #remove docker corresponding images containers
